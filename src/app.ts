@@ -21,4 +21,11 @@ siteForm.addEventListener('submit', (e: Event) => {
 
     e.preventDefault();
 
+    let item: HasFormatter;
+    if(type.value === 'invoice'){
+        item = new Invoice(toFrom.value,detail.value,amount.valueAsNumber)
+    }
+    else{
+        item = new Payment(toFrom.value,detail.value,amount.valueAsNumber)
+    }
 })
