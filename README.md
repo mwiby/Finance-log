@@ -1,2 +1,2 @@
 # Finance-log
-Log for private finance
+Log for keeping track of private finance
