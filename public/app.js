@@ -1,11 +1,11 @@
-"use strict";
 // Form
-var siteForm = document.querySelector('.new-item-form');
+const siteForm = document.querySelector('.new-item-form');
 // Input value
-var type = document.querySelector('#type');
-var toFrom = document.querySelector('#tofrom');
-var detail = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-siteForm.addEventListener('submit', function (e) {
+const type = document.querySelector('#type');
+const toFrom = document.querySelector('#tofrom');
+const detail = document.querySelector('#details');
+const amount = document.querySelector('#amount');
+siteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 });
+export {};
