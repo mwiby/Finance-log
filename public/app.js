@@ -13,12 +13,15 @@ const ul = document.querySelector('.item-list');
 const tempItem = new TemplateItem(ul);
 siteForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    // Tuples for destructure into object
+    let arr;
+    arr = [toFrom.value, detail.value, amount.valueAsNumber];
     let item;
     if (type.value === 'invoice') {
-        item = new Invoice(toFrom.value, detail.value, amount.valueAsNumber);
+        item = new Invoice(...arr);
     }
     else {
-        item = new Payment(toFrom.value, detail.value, amount.valueAsNumber);
+        item = new Payment(...arr);
     }
     tempItem.render(item, type.value, 'end');
 });

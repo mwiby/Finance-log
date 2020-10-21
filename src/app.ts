@@ -22,12 +22,16 @@ siteForm.addEventListener('submit', (e: Event) => {
 
     e.preventDefault();
 
+    // Tuples for destructure into object
+    let arr: [string,string,number];
+    arr = [toFrom.value,detail.value,amount.valueAsNumber];
+
     let item: HasFormatter;
     if(type.value === 'invoice'){
-        item = new Invoice(toFrom.value,detail.value,amount.valueAsNumber)
+        item = new Invoice(...arr)
     }
     else{
-        item = new Payment(toFrom.value,detail.value,amount.valueAsNumber)
+        item = new Payment(...arr)
     }
 
     tempItem.render(item,type.value,'end');
